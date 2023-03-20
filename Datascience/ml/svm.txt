@@ -1,0 +1,17 @@
+SVM - support vector machine - supervised, classification as well as regression problems.
+
+however classification is its common use.
+
+creates a best line or decision boundary that can generate  n-dimensional space into classes that can be used to put new data items in their correct category. Best line is hyperlane.
+
+Types
+
+1. Linear svm - linearly seperable data.
+Non-linear svm - data that cannot be classified using a straight line
+
+Hyperlane - there can be multiple lines but we need to find the best decision boundary.
+
+support vector - the data points that are closest to the hyperplane and which affect the position of the hyperplane. 
+
+Margin - distance between vectors and hyperplane.
+
