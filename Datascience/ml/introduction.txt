@@ -1,0 +1,37 @@
+Ml is a subset of Ai. It is concerned with developing algorithms that allow computers to learn from the data and past experiences on their own.
+
+1. Supervised Learning - trained using labelled data. - find a mapping function for input X with output Y. 
+examples are - Risk assessment, Image classification.
+
+supervised  - regression and classification
+
+
+2. Unsupervised - model are not supervised using training dataset. unlabelled data. Goal is to find underlying structure of dataset, group it according to similarities and represent it ina compressed format.
+   Unsupervised - clustering, association. 
+
+
+Train test split - model validation procedure that allows you to simulate how a model would perform on new unseen data.
+
+Regression analysis - statistical method to model the relationship between a dependent and independent variables with one or more independent variables.
+
+common terms - Depenent variable - the main factor which we want to predict/ target.
+independent - affects the dependent variables
+Outlier - contains either very high or low.
+Multicollinearity - if the independent varibles are highly correlated with each other variables, then such condition is called Multicollinearity
+Underfitting and overfitting - if our algorithms work well with the training dataset but not well with test dataset - overfitting, the opp is uner.
+
+
+Types of regression
+1. Linear regression - used for predictive analysis. for numerical values. 
+
+shows the linear relationship between the independent variable x-axis and dependent on y-axis.
+LR algorithm - 
+negative linear regression - if the dependent variable decreases the on Y-axis while dependent +ses. 
+Positive LR - the opp
+
+Logistic regression - used for predicting the categorical dependent variable using a given set of independentvariables.
+The output is either a yes or no, 0 or 1,True or False,
+LR is used for solving regression problesm Logistic - used for solving classification problems.
+
+Logistic function (sigmoid) - used to map predicted values to probabilities.
+
