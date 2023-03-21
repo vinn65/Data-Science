@@ -1,0 +1,18 @@
+decision tree - supervised, both classification and regression.
+
+but mostly classification problems
+
+Two nodes, decision and leaf node.
+
+decision are used to make any decision and have multiple branches, 
+Leaf are the output of those decisions and do not contain any further branches.
+
+Cart algo is used to build a decision tree. classification and regression tree algorithm.
+
+Why use DT
+- Mimic human thinking ability while making decisions, It`s logic can easily be understood because it shows a tree-like structure.
+
+ Pruning - removing unwanted branceds from the tree.
+ Disadvantages - comples - may have lots of layers
+ - have overfitting issues - resolved using Random forest algorithm
+ - Computational complexity may increase for more class labels.
