@@ -1,0 +1,15 @@
+#based on supervised learning 
+#Assumes similarity between  new case data and available cases and puts the new case into the category.
+#Stores all available data and classifiers a new data point based oon the similarity
+#It is a non-parametric algo thus does not make any assumptions on underlying data.
+#It is a lazy learner. - does not learn from the training set immediately instead stores it and at the time of classification, it performs an action on the dataset.
+
+#Working algorithm
+# Select the number on K neigbors, Calculate the Euclidean distance of K number of neighbors, Take the K nearest neighbors as per the calculated distance, Among the K neighbors, count the number od data points in each category,assign the new data points to the category to ahich rthe number of the neigbors is maximum and the model is ready,
+
+
+
+
+
+
+
