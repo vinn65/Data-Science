@@ -1,0 +1,99 @@
+// Abstract Syntax Tree
+digraph {
+	1 [label=PROGRAM]
+	0 -> 1
+	2 [label=EXPRESSION_STATEMENT]
+	1 -> 2
+	3 [label=BINARY_EXPRESSION]
+	2 -> 3
+	4 [label="="]
+	3 -> 4
+	5 [label=PRIMARY_EXPRESSION]
+	3 -> 5
+	6 [label=x]
+	5 -> 6
+	7 [label=BINARY_EXPRESSION]
+	3 -> 7
+	8 [label="+"]
+	7 -> 8
+	9 [label=PRIMARY_EXPRESSION]
+	7 -> 9
+	10 [label=5]
+	9 -> 10
+	11 [label=BINARY_EXPRESSION]
+	7 -> 11
+	12 [label="+"]
+	11 -> 12
+	13 [label=PRIMARY_EXPRESSION]
+	11 -> 13
+	14 [label=2]
+	13 -> 14
+	15 [label=PRIMARY_EXPRESSION]
+	11 -> 15
+	16 [label=3]
+	15 -> 16
+	17 [label=EXPRESSION_STATEMENT]
+	1 -> 17
+	18 [label=PRIMARY_EXPRESSION]
+	17 -> 18
+	19 [label=IF]
+	18 -> 19
+	20 [label=EXPRESSION_STATEMENT]
+	1 -> 20
+	21 [label=BINARY_EXPRESSION]
+	20 -> 21
+	22 [label="<"]
+	21 -> 22
+	23 [label=PRIMARY_EXPRESSION]
+	21 -> 23
+	24 [label=x]
+	23 -> 24
+	25 [label=PRIMARY_EXPRESSION]
+	21 -> 25
+	26 [label=18]
+	25 -> 26
+	27 [label=EXPRESSION_STATEMENT]
+	1 -> 27
+	28 [label=PRIMARY_EXPRESSION]
+	27 -> 28
+	29 [label=PRINT]
+	28 -> 29
+	30 [label=EXPRESSION_STATEMENT]
+	1 -> 30
+	31 [label=PRIMARY_EXPRESSION]
+	30 -> 31
+	32 [label="\"You can`t vote\""]
+	31 -> 32
+	33 [label=EXPRESSION_STATEMENT]
+	1 -> 33
+	34 [label=PRIMARY_EXPRESSION]
+	33 -> 34
+	35 [label=ELSE]
+	34 -> 35
+	36 [label=EXPRESSION_STATEMENT]
+	1 -> 36
+	37 [label=BINARY_EXPRESSION]
+	36 -> 37
+	38 [label="=="]
+	37 -> 38
+	39 [label=PRIMARY_EXPRESSION]
+	37 -> 39
+	40 [label=x]
+	39 -> 40
+	41 [label=PRIMARY_EXPRESSION]
+	37 -> 41
+	42 [label=18]
+	41 -> 42
+	43 [label=EXPRESSION_STATEMENT]
+	1 -> 43
+	44 [label=PRIMARY_EXPRESSION]
+	43 -> 44
+	45 [label=PRINT]
+	44 -> 45
+	46 [label=EXPRESSION_STATEMENT]
+	1 -> 46
+	47 [label=PRIMARY_EXPRESSION]
+	46 -> 47
+	48 [label="\"You can Vote\""]
+	47 -> 48
+}

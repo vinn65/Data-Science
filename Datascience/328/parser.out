@@ -1,0 +1,596 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    COMMENT
+
+Grammar
+
+Rule 0     S' -> program
+Rule 1     program -> statement_list
+Rule 2     statement_list -> statement
+Rule 3     statement_list -> statement statement_list
+Rule 4     statement -> expression_statement
+Rule 5     statement -> var_declaration
+Rule 6     statement -> if_statement
+Rule 7     statement -> print_statement
+Rule 8     expression_statement -> expression DELIMITER
+Rule 9     expression -> primary_expression
+Rule 10    expression -> binary_expression
+Rule 11    primary_expression -> IDENTIFIER
+Rule 12    primary_expression -> NUMBER
+Rule 13    primary_expression -> STRING
+Rule 14    if_statement -> IF expression { statement_list }
+Rule 15    if_statement -> IF expression { statement_list } ELSE { statement_list }
+Rule 16    print_statement -> PRINT ( expression ) DELIMITER
+Rule 17    binary_expression -> expression OPERATOR expression
+Rule 18    var_declaration -> KEYWORD IDENTIFIER = expression DELIMITER
+
+Terminals, with rules where they appear
+
+(                    : 16
+)                    : 16
+=                    : 18
+COMMENT              : 
+DELIMITER            : 8 16 18
+ELSE                 : 15
+IDENTIFIER           : 11 18
+IF                   : 14 15
+KEYWORD              : 18
+NUMBER               : 12
+OPERATOR             : 17
+PRINT                : 16
+STRING               : 13
+error                : 
+{                    : 14 15 15
+}                    : 14 15 15
+
+Nonterminals, with rules where they appear
+
+binary_expression    : 10
+expression           : 8 14 15 16 17 17 18
+expression_statement : 4
+if_statement         : 6
+primary_expression   : 9
+print_statement      : 7
+program              : 0
+statement            : 2 3
+statement_list       : 1 3 14 15 15
+var_declaration      : 5
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . program
+    (1) program -> . statement_list
+    (2) statement_list -> . statement
+    (3) statement_list -> . statement statement_list
+    (4) statement -> . expression_statement
+    (5) statement -> . var_declaration
+    (6) statement -> . if_statement
+    (7) statement -> . print_statement
+    (8) expression_statement -> . expression DELIMITER
+    (18) var_declaration -> . KEYWORD IDENTIFIER = expression DELIMITER
+    (14) if_statement -> . IF expression { statement_list }
+    (15) if_statement -> . IF expression { statement_list } ELSE { statement_list }
+    (16) print_statement -> . PRINT ( expression ) DELIMITER
+    (9) expression -> . primary_expression
+    (10) expression -> . binary_expression
+    (11) primary_expression -> . IDENTIFIER
+    (12) primary_expression -> . NUMBER
+    (13) primary_expression -> . STRING
+    (17) binary_expression -> . expression OPERATOR expression
+
+    KEYWORD         shift and go to state 9
+    IF              shift and go to state 11
+    PRINT           shift and go to state 12
+    IDENTIFIER      shift and go to state 10
+    NUMBER          shift and go to state 15
+    STRING          shift and go to state 16
+
+    program                        shift and go to state 1
+    statement_list                 shift and go to state 2
+    statement                      shift and go to state 3
+    expression_statement           shift and go to state 4
+    var_declaration                shift and go to state 5
+    if_statement                   shift and go to state 6
+    print_statement                shift and go to state 7
+    expression                     shift and go to state 8
+    primary_expression             shift and go to state 13
+    binary_expression              shift and go to state 14
+
+state 1
+
+    (0) S' -> program .
+
+
+
+state 2
+
+    (1) program -> statement_list .
+
+    $end            reduce using rule 1 (program -> statement_list .)
+
+
+state 3
+
+    (2) statement_list -> statement .
+    (3) statement_list -> statement . statement_list
+    (2) statement_list -> . statement
+    (3) statement_list -> . statement statement_list
+    (4) statement -> . expression_statement
+    (5) statement -> . var_declaration
+    (6) statement -> . if_statement
+    (7) statement -> . print_statement
+    (8) expression_statement -> . expression DELIMITER
+    (18) var_declaration -> . KEYWORD IDENTIFIER = expression DELIMITER
+    (14) if_statement -> . IF expression { statement_list }
+    (15) if_statement -> . IF expression { statement_list } ELSE { statement_list }
+    (16) print_statement -> . PRINT ( expression ) DELIMITER
+    (9) expression -> . primary_expression
+    (10) expression -> . binary_expression
+    (11) primary_expression -> . IDENTIFIER
+    (12) primary_expression -> . NUMBER
+    (13) primary_expression -> . STRING
+    (17) binary_expression -> . expression OPERATOR expression
+
+    $end            reduce using rule 2 (statement_list -> statement .)
+    }               reduce using rule 2 (statement_list -> statement .)
+    KEYWORD         shift and go to state 9
+    IF              shift and go to state 11
+    PRINT           shift and go to state 12
+    IDENTIFIER      shift and go to state 10
+    NUMBER          shift and go to state 15
+    STRING          shift and go to state 16
+
+    statement                      shift and go to state 3
+    statement_list                 shift and go to state 17
+    expression_statement           shift and go to state 4
+    var_declaration                shift and go to state 5
+    if_statement                   shift and go to state 6
+    print_statement                shift and go to state 7
+    expression                     shift and go to state 8
+    primary_expression             shift and go to state 13
+    binary_expression              shift and go to state 14
+
+state 4
+
+    (4) statement -> expression_statement .
+
+    KEYWORD         reduce using rule 4 (statement -> expression_statement .)
+    IF              reduce using rule 4 (statement -> expression_statement .)
+    PRINT           reduce using rule 4 (statement -> expression_statement .)
+    IDENTIFIER      reduce using rule 4 (statement -> expression_statement .)
+    NUMBER          reduce using rule 4 (statement -> expression_statement .)
+    STRING          reduce using rule 4 (statement -> expression_statement .)
+    $end            reduce using rule 4 (statement -> expression_statement .)
+    }               reduce using rule 4 (statement -> expression_statement .)
+
+
+state 5
+
+    (5) statement -> var_declaration .
+
+    KEYWORD         reduce using rule 5 (statement -> var_declaration .)
+    IF              reduce using rule 5 (statement -> var_declaration .)
+    PRINT           reduce using rule 5 (statement -> var_declaration .)
+    IDENTIFIER      reduce using rule 5 (statement -> var_declaration .)
+    NUMBER          reduce using rule 5 (statement -> var_declaration .)
+    STRING          reduce using rule 5 (statement -> var_declaration .)
+    $end            reduce using rule 5 (statement -> var_declaration .)
+    }               reduce using rule 5 (statement -> var_declaration .)
+
+
+state 6
+
+    (6) statement -> if_statement .
+
+    KEYWORD         reduce using rule 6 (statement -> if_statement .)
+    IF              reduce using rule 6 (statement -> if_statement .)
+    PRINT           reduce using rule 6 (statement -> if_statement .)
+    IDENTIFIER      reduce using rule 6 (statement -> if_statement .)
+    NUMBER          reduce using rule 6 (statement -> if_statement .)
+    STRING          reduce using rule 6 (statement -> if_statement .)
+    $end            reduce using rule 6 (statement -> if_statement .)
+    }               reduce using rule 6 (statement -> if_statement .)
+
+
+state 7
+
+    (7) statement -> print_statement .
+
+    KEYWORD         reduce using rule 7 (statement -> print_statement .)
+    IF              reduce using rule 7 (statement -> print_statement .)
+    PRINT           reduce using rule 7 (statement -> print_statement .)
+    IDENTIFIER      reduce using rule 7 (statement -> print_statement .)
+    NUMBER          reduce using rule 7 (statement -> print_statement .)
+    STRING          reduce using rule 7 (statement -> print_statement .)
+    $end            reduce using rule 7 (statement -> print_statement .)
+    }               reduce using rule 7 (statement -> print_statement .)
+
+
+state 8
+
+    (8) expression_statement -> expression . DELIMITER
+    (17) binary_expression -> expression . OPERATOR expression
+
+    DELIMITER       shift and go to state 18
+    OPERATOR        shift and go to state 19
+
+
+state 9
+
+    (18) var_declaration -> KEYWORD . IDENTIFIER = expression DELIMITER
+
+    IDENTIFIER      shift and go to state 20
+
+
+state 10
+
+    (11) primary_expression -> IDENTIFIER .
+
+    DELIMITER       reduce using rule 11 (primary_expression -> IDENTIFIER .)
+    OPERATOR        reduce using rule 11 (primary_expression -> IDENTIFIER .)
+    {               reduce using rule 11 (primary_expression -> IDENTIFIER .)
+    )               reduce using rule 11 (primary_expression -> IDENTIFIER .)
+
+
+state 11
+
+    (14) if_statement -> IF . expression { statement_list }
+    (15) if_statement -> IF . expression { statement_list } ELSE { statement_list }
+    (9) expression -> . primary_expression
+    (10) expression -> . binary_expression
+    (11) primary_expression -> . IDENTIFIER
+    (12) primary_expression -> . NUMBER
+    (13) primary_expression -> . STRING
+    (17) binary_expression -> . expression OPERATOR expression
+
+    IDENTIFIER      shift and go to state 10
+    NUMBER          shift and go to state 15
+    STRING          shift and go to state 16
+
+    expression                     shift and go to state 21
+    primary_expression             shift and go to state 13
+    binary_expression              shift and go to state 14
+
+state 12
+
+    (16) print_statement -> PRINT . ( expression ) DELIMITER
+
+    (               shift and go to state 22
+
+
+state 13
+
+    (9) expression -> primary_expression .
+
+    DELIMITER       reduce using rule 9 (expression -> primary_expression .)
+    OPERATOR        reduce using rule 9 (expression -> primary_expression .)
+    {               reduce using rule 9 (expression -> primary_expression .)
+    )               reduce using rule 9 (expression -> primary_expression .)
+
+
+state 14
+
+    (10) expression -> binary_expression .
+
+    DELIMITER       reduce using rule 10 (expression -> binary_expression .)
+    OPERATOR        reduce using rule 10 (expression -> binary_expression .)
+    {               reduce using rule 10 (expression -> binary_expression .)
+    )               reduce using rule 10 (expression -> binary_expression .)
+
+
+state 15
+
+    (12) primary_expression -> NUMBER .
+
+    DELIMITER       reduce using rule 12 (primary_expression -> NUMBER .)
+    OPERATOR        reduce using rule 12 (primary_expression -> NUMBER .)
+    {               reduce using rule 12 (primary_expression -> NUMBER .)
+    )               reduce using rule 12 (primary_expression -> NUMBER .)
+
+
+state 16
+
+    (13) primary_expression -> STRING .
+
+    DELIMITER       reduce using rule 13 (primary_expression -> STRING .)
+    OPERATOR        reduce using rule 13 (primary_expression -> STRING .)
+    {               reduce using rule 13 (primary_expression -> STRING .)
+    )               reduce using rule 13 (primary_expression -> STRING .)
+
+
+state 17
+
+    (3) statement_list -> statement statement_list .
+
+    $end            reduce using rule 3 (statement_list -> statement statement_list .)
+    }               reduce using rule 3 (statement_list -> statement statement_list .)
+
+
+state 18
+
+    (8) expression_statement -> expression DELIMITER .
+
+    KEYWORD         reduce using rule 8 (expression_statement -> expression DELIMITER .)
+    IF              reduce using rule 8 (expression_statement -> expression DELIMITER .)
+    PRINT           reduce using rule 8 (expression_statement -> expression DELIMITER .)
+    IDENTIFIER      reduce using rule 8 (expression_statement -> expression DELIMITER .)
+    NUMBER          reduce using rule 8 (expression_statement -> expression DELIMITER .)
+    STRING          reduce using rule 8 (expression_statement -> expression DELIMITER .)
+    $end            reduce using rule 8 (expression_statement -> expression DELIMITER .)
+    }               reduce using rule 8 (expression_statement -> expression DELIMITER .)
+
+
+state 19
+
+    (17) binary_expression -> expression OPERATOR . expression
+    (9) expression -> . primary_expression
+    (10) expression -> . binary_expression
+    (11) primary_expression -> . IDENTIFIER
+    (12) primary_expression -> . NUMBER
+    (13) primary_expression -> . STRING
+    (17) binary_expression -> . expression OPERATOR expression
+
+    IDENTIFIER      shift and go to state 10
+    NUMBER          shift and go to state 15
+    STRING          shift and go to state 16
+
+    expression                     shift and go to state 23
+    primary_expression             shift and go to state 13
+    binary_expression              shift and go to state 14
+
+state 20
+
+    (18) var_declaration -> KEYWORD IDENTIFIER . = expression DELIMITER
+
+    =               shift and go to state 24
+
+
+state 21
+
+    (14) if_statement -> IF expression . { statement_list }
+    (15) if_statement -> IF expression . { statement_list } ELSE { statement_list }
+    (17) binary_expression -> expression . OPERATOR expression
+
+    {               shift and go to state 25
+    OPERATOR        shift and go to state 19
+
+
+state 22
+
+    (16) print_statement -> PRINT ( . expression ) DELIMITER
+    (9) expression -> . primary_expression
+    (10) expression -> . binary_expression
+    (11) primary_expression -> . IDENTIFIER
+    (12) primary_expression -> . NUMBER
+    (13) primary_expression -> . STRING
+    (17) binary_expression -> . expression OPERATOR expression
+
+    IDENTIFIER      shift and go to state 10
+    NUMBER          shift and go to state 15
+    STRING          shift and go to state 16
+
+    expression                     shift and go to state 26
+    primary_expression             shift and go to state 13
+    binary_expression              shift and go to state 14
+
+state 23
+
+    (17) binary_expression -> expression OPERATOR expression .
+    (17) binary_expression -> expression . OPERATOR expression
+
+  ! shift/reduce conflict for OPERATOR resolved as shift
+    DELIMITER       reduce using rule 17 (binary_expression -> expression OPERATOR expression .)
+    {               reduce using rule 17 (binary_expression -> expression OPERATOR expression .)
+    )               reduce using rule 17 (binary_expression -> expression OPERATOR expression .)
+    OPERATOR        shift and go to state 19
+
+  ! OPERATOR        [ reduce using rule 17 (binary_expression -> expression OPERATOR expression .) ]
+
+
+state 24
+
+    (18) var_declaration -> KEYWORD IDENTIFIER = . expression DELIMITER
+    (9) expression -> . primary_expression
+    (10) expression -> . binary_expression
+    (11) primary_expression -> . IDENTIFIER
+    (12) primary_expression -> . NUMBER
+    (13) primary_expression -> . STRING
+    (17) binary_expression -> . expression OPERATOR expression
+
+    IDENTIFIER      shift and go to state 10
+    NUMBER          shift and go to state 15
+    STRING          shift and go to state 16
+
+    expression                     shift and go to state 27
+    primary_expression             shift and go to state 13
+    binary_expression              shift and go to state 14
+
+state 25
+
+    (14) if_statement -> IF expression { . statement_list }
+    (15) if_statement -> IF expression { . statement_list } ELSE { statement_list }
+    (2) statement_list -> . statement
+    (3) statement_list -> . statement statement_list
+    (4) statement -> . expression_statement
+    (5) statement -> . var_declaration
+    (6) statement -> . if_statement
+    (7) statement -> . print_statement
+    (8) expression_statement -> . expression DELIMITER
+    (18) var_declaration -> . KEYWORD IDENTIFIER = expression DELIMITER
+    (14) if_statement -> . IF expression { statement_list }
+    (15) if_statement -> . IF expression { statement_list } ELSE { statement_list }
+    (16) print_statement -> . PRINT ( expression ) DELIMITER
+    (9) expression -> . primary_expression
+    (10) expression -> . binary_expression
+    (11) primary_expression -> . IDENTIFIER
+    (12) primary_expression -> . NUMBER
+    (13) primary_expression -> . STRING
+    (17) binary_expression -> . expression OPERATOR expression
+
+    KEYWORD         shift and go to state 9
+    IF              shift and go to state 11
+    PRINT           shift and go to state 12
+    IDENTIFIER      shift and go to state 10
+    NUMBER          shift and go to state 15
+    STRING          shift and go to state 16
+
+    expression                     shift and go to state 8
+    statement_list                 shift and go to state 28
+    statement                      shift and go to state 3
+    expression_statement           shift and go to state 4
+    var_declaration                shift and go to state 5
+    if_statement                   shift and go to state 6
+    print_statement                shift and go to state 7
+    primary_expression             shift and go to state 13
+    binary_expression              shift and go to state 14
+
+state 26
+
+    (16) print_statement -> PRINT ( expression . ) DELIMITER
+    (17) binary_expression -> expression . OPERATOR expression
+
+    )               shift and go to state 29
+    OPERATOR        shift and go to state 19
+
+
+state 27
+
+    (18) var_declaration -> KEYWORD IDENTIFIER = expression . DELIMITER
+    (17) binary_expression -> expression . OPERATOR expression
+
+    DELIMITER       shift and go to state 30
+    OPERATOR        shift and go to state 19
+
+
+state 28
+
+    (14) if_statement -> IF expression { statement_list . }
+    (15) if_statement -> IF expression { statement_list . } ELSE { statement_list }
+
+    }               shift and go to state 31
+
+
+state 29
+
+    (16) print_statement -> PRINT ( expression ) . DELIMITER
+
+    DELIMITER       shift and go to state 32
+
+
+state 30
+
+    (18) var_declaration -> KEYWORD IDENTIFIER = expression DELIMITER .
+
+    KEYWORD         reduce using rule 18 (var_declaration -> KEYWORD IDENTIFIER = expression DELIMITER .)
+    IF              reduce using rule 18 (var_declaration -> KEYWORD IDENTIFIER = expression DELIMITER .)
+    PRINT           reduce using rule 18 (var_declaration -> KEYWORD IDENTIFIER = expression DELIMITER .)
+    IDENTIFIER      reduce using rule 18 (var_declaration -> KEYWORD IDENTIFIER = expression DELIMITER .)
+    NUMBER          reduce using rule 18 (var_declaration -> KEYWORD IDENTIFIER = expression DELIMITER .)
+    STRING          reduce using rule 18 (var_declaration -> KEYWORD IDENTIFIER = expression DELIMITER .)
+    $end            reduce using rule 18 (var_declaration -> KEYWORD IDENTIFIER = expression DELIMITER .)
+    }               reduce using rule 18 (var_declaration -> KEYWORD IDENTIFIER = expression DELIMITER .)
+
+
+state 31
+
+    (14) if_statement -> IF expression { statement_list } .
+    (15) if_statement -> IF expression { statement_list } . ELSE { statement_list }
+
+    KEYWORD         reduce using rule 14 (if_statement -> IF expression { statement_list } .)
+    IF              reduce using rule 14 (if_statement -> IF expression { statement_list } .)
+    PRINT           reduce using rule 14 (if_statement -> IF expression { statement_list } .)
+    IDENTIFIER      reduce using rule 14 (if_statement -> IF expression { statement_list } .)
+    NUMBER          reduce using rule 14 (if_statement -> IF expression { statement_list } .)
+    STRING          reduce using rule 14 (if_statement -> IF expression { statement_list } .)
+    $end            reduce using rule 14 (if_statement -> IF expression { statement_list } .)
+    }               reduce using rule 14 (if_statement -> IF expression { statement_list } .)
+    ELSE            shift and go to state 33
+
+
+state 32
+
+    (16) print_statement -> PRINT ( expression ) DELIMITER .
+
+    KEYWORD         reduce using rule 16 (print_statement -> PRINT ( expression ) DELIMITER .)
+    IF              reduce using rule 16 (print_statement -> PRINT ( expression ) DELIMITER .)
+    PRINT           reduce using rule 16 (print_statement -> PRINT ( expression ) DELIMITER .)
+    IDENTIFIER      reduce using rule 16 (print_statement -> PRINT ( expression ) DELIMITER .)
+    NUMBER          reduce using rule 16 (print_statement -> PRINT ( expression ) DELIMITER .)
+    STRING          reduce using rule 16 (print_statement -> PRINT ( expression ) DELIMITER .)
+    $end            reduce using rule 16 (print_statement -> PRINT ( expression ) DELIMITER .)
+    }               reduce using rule 16 (print_statement -> PRINT ( expression ) DELIMITER .)
+
+
+state 33
+
+    (15) if_statement -> IF expression { statement_list } ELSE . { statement_list }
+
+    {               shift and go to state 34
+
+
+state 34
+
+    (15) if_statement -> IF expression { statement_list } ELSE { . statement_list }
+    (2) statement_list -> . statement
+    (3) statement_list -> . statement statement_list
+    (4) statement -> . expression_statement
+    (5) statement -> . var_declaration
+    (6) statement -> . if_statement
+    (7) statement -> . print_statement
+    (8) expression_statement -> . expression DELIMITER
+    (18) var_declaration -> . KEYWORD IDENTIFIER = expression DELIMITER
+    (14) if_statement -> . IF expression { statement_list }
+    (15) if_statement -> . IF expression { statement_list } ELSE { statement_list }
+    (16) print_statement -> . PRINT ( expression ) DELIMITER
+    (9) expression -> . primary_expression
+    (10) expression -> . binary_expression
+    (11) primary_expression -> . IDENTIFIER
+    (12) primary_expression -> . NUMBER
+    (13) primary_expression -> . STRING
+    (17) binary_expression -> . expression OPERATOR expression
+
+    KEYWORD         shift and go to state 9
+    IF              shift and go to state 11
+    PRINT           shift and go to state 12
+    IDENTIFIER      shift and go to state 10
+    NUMBER          shift and go to state 15
+    STRING          shift and go to state 16
+
+    expression                     shift and go to state 8
+    statement_list                 shift and go to state 35
+    statement                      shift and go to state 3
+    expression_statement           shift and go to state 4
+    var_declaration                shift and go to state 5
+    if_statement                   shift and go to state 6
+    print_statement                shift and go to state 7
+    primary_expression             shift and go to state 13
+    binary_expression              shift and go to state 14
+
+state 35
+
+    (15) if_statement -> IF expression { statement_list } ELSE { statement_list . }
+
+    }               shift and go to state 36
+
+
+state 36
+
+    (15) if_statement -> IF expression { statement_list } ELSE { statement_list } .
+
+    KEYWORD         reduce using rule 15 (if_statement -> IF expression { statement_list } ELSE { statement_list } .)
+    IF              reduce using rule 15 (if_statement -> IF expression { statement_list } ELSE { statement_list } .)
+    PRINT           reduce using rule 15 (if_statement -> IF expression { statement_list } ELSE { statement_list } .)
+    IDENTIFIER      reduce using rule 15 (if_statement -> IF expression { statement_list } ELSE { statement_list } .)
+    NUMBER          reduce using rule 15 (if_statement -> IF expression { statement_list } ELSE { statement_list } .)
+    STRING          reduce using rule 15 (if_statement -> IF expression { statement_list } ELSE { statement_list } .)
+    $end            reduce using rule 15 (if_statement -> IF expression { statement_list } ELSE { statement_list } .)
+    }               reduce using rule 15 (if_statement -> IF expression { statement_list } ELSE { statement_list } .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for OPERATOR in state 23 resolved as shift
